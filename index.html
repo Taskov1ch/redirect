@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirect</title>
+</head>
+<body>
+  <p>Перенаправление...</p>
+
+  <script>
+    const redirects = {
+      test: "https://example.com",
+      google: "https://google.com",
+      vortex: "https://vortexbe.com"
+    };
+
+    const fallback = "https://taskov1ch.xyz";
+
+    const params = new URLSearchParams(window.location.search);
+    const tag = params.get("to");
+
+    if (tag && redirects[tag]) {
+      window.location.href = redirects[tag];
+    } else {
+      window.location.href = fallback;
+    }
+  </script>
+</body>
+</html>
